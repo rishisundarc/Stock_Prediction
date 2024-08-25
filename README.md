@@ -1,41 +1,53 @@
 # Stock Prediction Project
 
 ## Overview
-
-This project predicts stock prices using an enhanced LSTM (Long Short-Term Memory) model. It includes additional features and hyperparameter tuning to improve the prediction accuracy. The application provides a web interface for users to select a company and view the predicted stock price along with a plot of historical prices.
-
-## Features
-
-- **Stock Price Prediction**: Predicts the next day's stock price based on historical data.
-- **Model**: Enhanced LSTM model with additional features and hyperparameter tuning.
-- **Web Interface**: Allows users to choose a company and view predictions and historical price plots.
-- **Data Visualization**: Displays a plot of historical stock prices.
-
-## Technologies Used
-
-- **Python**: Programming language used for data processing and model training.
-- **TensorFlow/Keras**: Machine learning library for building and training the LSTM model.
-- **Flask**: Web framework for creating the web application.
-- **Pandas**: Data manipulation and analysis library.
-- **Scikit-Learn**: For preprocessing and model evaluation.
-- **Matplotlib**: For plotting stock price data.
+This project provides a web application to predict stock prices using an LSTM (Long Short-Term Memory) model. Users can select a company, view the predicted stock price for the next day, and visualize historical price data.
 
 ## Project Structure
 
-- `app.py`: Main Flask application file.
-- `fetch_stock_data` : Retrieve historical stock prices and other relevant data for a given company
-- `data_preparation.py`: Contains functions for data preprocessing, including scaling and sequence creation.
-- `model_training.py`: Script to build, train, and save the LSTM model.
-- `model_evaluation.py`: Script to evaluate the model's performance.
-- `predict_future_price.py`: Script to make predictions using the trained model.
-- `index.html` : main webpage for a stock prediction application, providing a user interface for selecting a company and viewing predictions and plots
+1. **`app.py`**: The main Flask application that serves the web interface, handles user input, and displays predictions and plots.
 
-## Setup
+2. **`data_preparation.py`**: Contains functions for preparing and scaling stock data, and for hyperparameter tuning of the LSTM model.
 
-### Prerequisites
+3. **`model_training.py`**: Defines and trains the LSTM model on historical stock data.
 
-- Python 3.7 or higher
-- Install required Python libraries:
+4. **`model_evaluation.py`**: Evaluates the trained model’s performance and generates metrics such as RMSE (Root Mean Squared Error).
 
+5. **`predict_future_price.py`**: Makes predictions for future stock prices using the trained model.
+
+6. **`fetch_stock_data.py`**: (If used) Fetches historical stock data from a specified source, such as an API or CSV file.
+
+7. **`templates/index.html`**: The HTML template for the web interface, allowing users to select a company and view predictions and plots.
+
+8. **`static/styles.css`**: Contains styling for the web application, enhancing the user interface.
+
+## Usage
+
+1. **Prepare Data**: Use historical stock data files in CSV format. Ensure they include columns such as `Date` and `Close`.
+
+2. **Train Model**: Run `model_training.py` to train the LSTM model on the prepared data.
+
+3. **Evaluate Model**: Use `model_evaluation.py` to assess the model's performance.
+
+4. **Predict Future Prices**: Run `predict_future_price.py` to generate predictions for the next day's stock price.
+
+5. **Run Web Application**:
+   - Execute `app.py` to start the Flask server.
+   - Open a web browser and navigate to `http://127.0.0.1:5000`.
+   - Select a company from the dropdown menu to see predictions and historical price plots.
+
+6. **Fetch Stock Data**: If using `fetch_stock_data.py`, ensure it correctly retrieves and formats stock data from your data source.
+
+## Requirements
+
+- Python 3.x
+- Flask
+- TensorFlow/Keras
+- scikit-learn
+- Pandas
+- Matplotlib
+- (Optional) keras_tuner for hyperparameter tuning
+
+Install dependencies using:
 ```bash
-pip install pandas numpy scikit-learn tensorflow flask matplotlib keras-tuner
+pip install -r requirements.txt

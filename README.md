@@ -23,12 +23,12 @@ This project predicts stock prices using an enhanced LSTM (Long Short-Term Memor
 ## Project Structure
 
 - `app.py`: Main Flask application file.
+- `fetch_stock_data` : Retrieve historical stock prices and other relevant data for a given company
 - `data_preparation.py`: Contains functions for data preprocessing, including scaling and sequence creation.
 - `model_training.py`: Script to build, train, and save the LSTM model.
 - `model_evaluation.py`: Script to evaluate the model's performance.
 - `predict_future_price.py`: Script to make predictions using the trained model.
-- `static/`: Directory for static files like CSS and JavaScript (if any).
-- `templates/`: Directory for HTML templates.
+- `index.html` : main webpage for a stock prediction application, providing a user interface for selecting a company and viewing predictions and plots
 
 ## Setup
 

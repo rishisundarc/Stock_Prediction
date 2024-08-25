@@ -1,53 +1,85 @@
-# Stock Prediction Project
+# Stock Prediction Using LSTM
 
-## Overview
-This project provides a web application to predict stock prices using an LSTM (Long Short-Term Memory) model. Users can select a company, view the predicted stock price for the next day, and visualize historical price data.
+This project implements a stock prediction system using Long Short-Term Memory (LSTM) networks. The application leverages LSTM models to predict stock prices and provides a web interface for users to select a company and view predictions.
 
-## Project Structure
+## Project Overview
 
-1. **`app.py`**: The main Flask application that serves the web interface, handles user input, and displays predictions and plots.
+- **Stock Price Prediction:** Utilizes LSTM models to forecast future stock prices based on historical data.
+- **Web Interface:** Provides a user-friendly web application to select a company and view predictions and visualizations.
 
-2. **`data_preparation.py`**: Contains functions for preparing and scaling stock data, and for hyperparameter tuning of the LSTM model.
+## Technologies Used
 
-3. **`model_training.py`**: Defines and trains the LSTM model on historical stock data.
+- **Machine Learning:** LSTM (Long Short-Term Memory)
+- **Web Framework:** Flask
+- **Frontend:** HTML, CSS
+- **Data Processing:** pandas, numpy
+- **Plotting:** matplotlib
+- **Hyperparameter Tuning:** Keras Tuner (optional, for advanced users)
 
-4. **`model_evaluation.py`**: Evaluates the trained model’s performance and generates metrics such as RMSE (Root Mean Squared Error).
+## Installation
 
-5. **`predict_future_price.py`**: Makes predictions for future stock prices using the trained model.
+To get started with this project, follow these steps:
 
-6. **`fetch_stock_data.py`**: (If used) Fetches historical stock data from a specified source, such as an API or CSV file.
+1. **Clone the repository:**
 
-7. **`templates/index.html`**: The HTML template for the web interface, allowing users to select a company and view predictions and plots.
+    ```bash
+    git clone https://github.com/yourusername/stock-prediction-lstm.git
+    cd stock-prediction-lstm
+    ```
 
-8. **`static/styles.css`**: Contains styling for the web application, enhancing the user interface.
+2. **Create a virtual environment (optional but recommended):**
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install the required packages:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Download the dataset:**
+
+    Ensure that you have the required dataset files (e.g., `AAPL_last_two_months_data.csv`) in the project directory.
 
 ## Usage
 
-1. **Prepare Data**: Use historical stock data files in CSV format. Ensure they include columns such as `Date` and `Close`.
+1. **Run the Flask application:**
 
-2. **Train Model**: Run `model_training.py` to train the LSTM model on the prepared data.
+    ```bash
+    python app.py
+    ```
 
-3. **Evaluate Model**: Use `model_evaluation.py` to assess the model's performance.
+2. **Access the web application:**
 
-4. **Predict Future Prices**: Run `predict_future_price.py` to generate predictions for the next day's stock price.
+    Open your web browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to interact with the application.
 
-5. **Run Web Application**:
-   - Execute `app.py` to start the Flask server.
-   - Open a web browser and navigate to `http://127.0.0.1:5000`.
-   - Select a company from the dropdown menu to see predictions and historical price plots.
+   - **Home Page:** Displays the main interface for selecting a company and viewing predictions.
+   - **Prediction Page:** Shows the predicted price for the next day and a plot of historical prices.
 
-6. **Fetch Stock Data**: If using `fetch_stock_data.py`, ensure it correctly retrieves and formats stock data from your data source.
+## Project Structure
+
+- `app.py`: The main Flask application file that includes routes and logic.
+- `data_preparation.py`: Contains functions for preparing data and training the model.
+- `lstm_stock_model.h5`: The trained LSTM model file.
+- `templates/`: Contains HTML files for the web interface.
+- `static/`: Contains CSS files and other static assets.
+- `requirements.txt`: Lists the Python dependencies.
 
 ## Requirements
 
-- Python 3.x
-- Flask
-- TensorFlow/Keras
-- scikit-learn
-- Pandas
-- Matplotlib
-- (Optional) keras_tuner for hyperparameter tuning
+Ensure you have the following Python packages installed:
 
-Install dependencies using:
+- Flask
+- pandas
+- numpy
+- matplotlib
+- tensorflow
+- keras-tuner (optional, for hyperparameter tuning)
+
+You can install all dependencies using:
+
 ```bash
-pip install -r requirements.txt
+pip install flask pandas numpy matplotlib tensorflow keras-tuner

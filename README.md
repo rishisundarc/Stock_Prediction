@@ -23,7 +23,7 @@ To get started with this project, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/stock-prediction-lstm.git
+    git clone https://github.com/rishisundarc/stock-prediction-lstm.git
     cd stock-prediction-lstm
     ```
 

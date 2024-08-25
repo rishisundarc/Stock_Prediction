@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            flex: 1; /* Allows container to grow and push footer to the bottom */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .predicted-price {
+            color: red; /* Red color for the predicted price amount */
+        }
+        h2 {
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-top: 1px solid #ddd;
+        }
+        .footer-left, .footer-right {
+            flex: 1;
+        }
+        .footer-left {
+            text-align: left;
+        }
+        .footer-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Prediction</h1>
+    
+    <div class="container">
+        <form action="/" method="post">
+            <label for="company">Choose a company:</label>
+            <select id="company" name="company">
+                {% for company in companies %}
+                    <option value="{{ company }}" {% if company == selected_company %}selected{% endif %}>{{ company }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Get Prediction">
+        </form>
+        
+        <p>Predicted Price for the Next Day: <span class="predicted-price">${{ predicted_price }}</span></p>
+        <h2>Price Plot</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Stock Price Plot">
+    </div>
+    
+    <footer>
+        <div class="footer-left">
+            <b>Algorithm Used:</b> <br>Enhanced LSTM Model with Additional Features and Hyperparameter Tuning
+        </div>
+        <div class="footer-right">
+            <B>Team Members:</B> <br>RISHI SUNDAR C(727821TUCS206)<br>SAI NARENDAR S(727821TUCS210)<br>VIVINPRABHU S(727821TUCS255)
+        </div>
+    </footer>
+</body>
+</html>

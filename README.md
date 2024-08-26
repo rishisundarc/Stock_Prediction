@@ -9,77 +9,64 @@ This project implements a stock prediction system using Long Short-Term Memory (
 
 ## Technologies Used
 
-- **Machine Learning:** LSTM (Long Short-Term Memory)
-- **Web Framework:** Flask
-- **Frontend:** HTML, CSS
-- **Data Processing:** pandas, numpy
-- **Plotting:** matplotlib
-- **Hyperparameter Tuning:** Keras Tuner (optional, for advanced users)
+- **React.js:** A JavaScript library for building user interfaces.
+- **CSS:** Used for styling the application.
 
 ## Installation
 
-To get started with this project, follow these steps:
+To get started with Carzpsot, follow these steps:
 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/rishisundarc/stock-prediction-lstm.git
+    git clone https://github.com/rishisundarc/carzpsot.git
     cd stock-prediction-lstm
     ```
 
-2. **Create a virtual environment (optional but recommended):**
+2. **Navigate to the project directory:**
 
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   cd carzpsot
     ```
 
-3. **Install the required packages:**
+3. **Install dependencies**
 
     ```bash
-    pip install -r requirements.txt
+    npm install
     ```
 
-4. **Download the dataset:**
+4. **Start the development server:**
 
-    Ensure that you have the required dataset files (e.g., `AAPL_last_two_months_data.csv`) in the project directory.
+     ```bash
+    npm start
+    ```
+The application will be accessible at http://localhost:3000 in your web browser.
 
 ## Usage
 
-1. **Run the Flask application:**
-
-    ```bash
-    python app.py
-    ```
-
-2. **Access the web application:**
-
-    Open your web browser and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to interact with the application.
-
-   - **Home Page:** Displays the main interface for selecting a company and viewing predictions.
-   - **Prediction Page:** Shows the predicted price for the next day and a plot of historical prices.
+**Once the development server is running, you can:**
+- **Browse Accessories:** View and shop for car accessories in the Accessory List section.
+- **Set Service Reminders:** Use the Reminder Form to set up reminders for your car's service schedule.
+- **Find Nearby Mechanics:** Enter your location in the Mechanic Finder to discover mechanics close to you.
 
 ## Project Structure
 
-- `app.py`: The main Flask application file that includes routes and logic.
-- `data_preparation.py`: Contains functions for preparing data and training the model.
-- `lstm_stock_model.h5`: The trained LSTM model file.
-- `templates/`: Contains HTML files for the web interface.
-- `static/`: Contains CSS files and other static assets.
-- `requirements.txt`: Lists the Python dependencies.
+- `public/` : Contains the index.html file and other static assets.
+- `src/`: Contains the main source code for the application.
+    - `components/`: Directory for React components.
+        - `AccessoryList.js`: Component for displaying car accessories.
+        - `ReminderForm.js`: Component for setting service reminders.
+        - `MechanicFinder.js`: Component for finding nearby mechanics.
+        - `Header.js`: Component for the application header.
+- `App.js`: The main component that includes other components.
+- `index.js`: The entry point for the React application.
+- `App.css`: Styles for the application.
 
-## Requirements
+## Contributing
 
-Ensure you have the following Python packages installed:
+If you'd like to contribute to Carzpsot, please follow these steps:
 
-- Flask
-- pandas
-- numpy
-- matplotlib
-- tensorflow
-- keras-tuner (optional, for hyperparameter tuning)
-
-You can install all dependencies using:
-
-```bash
-pip install flask pandas numpy matplotlib tensorflow keras-tuner
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push to your branch.
+4. Open a pull request with a description of your changes.
